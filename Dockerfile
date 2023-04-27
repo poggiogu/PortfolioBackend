@@ -1,6 +1,6 @@
-FROM adoptopenjdk:17-jdk-hotspot 
+FROM amazoncorretto:17
 
-MAINTAINER guillermo
+MAINTAINER Guillermo
 
 COPY target/portfolioBackend-0.0.1-SNAPSHOT.jar portfolioBackend-0.0.1-SNAPSHOT.jar
 
