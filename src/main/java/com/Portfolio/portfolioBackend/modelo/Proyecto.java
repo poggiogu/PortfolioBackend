@@ -16,18 +16,22 @@ public class Proyecto {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_project;
     @Basic
-    private String nombre_project;
-    private String url_project;
+    private String nombre;
     private String descripcion;
+    private String fecha;
+    private String urlImagen;
+    private String urlRepositorio;
 
     public Proyecto() {
     }
 
-    public Proyecto(Long id_project, String nombre_project, String url_project, String descripcion) {
+    public Proyecto(Long id_project, String nombre, String descripcion, String fecha, String urlImagen, String urlRepositorio) {
         this.id_project = id_project;
-        this.nombre_project = nombre_project;
-        this.url_project = url_project;
+        this.nombre = nombre;
         this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.urlImagen = urlImagen;
+        this.urlRepositorio = urlRepositorio;
     }
     
 }
