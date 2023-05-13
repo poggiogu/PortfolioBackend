@@ -3,6 +3,7 @@ C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\repository\EducacionRepository.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\controller\Controller.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\model\service\IPerfilService.java
+C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\modelo\Mensaje.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\model\service\SkillService.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\repository\SkillRepository.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\model\service\IProyectoService.java
@@ -19,4 +20,5 @@ C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\model\service\EducacionService.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\modelo\Experiencia.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\repository\ProyectoRepository.java
+C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\WebConfig.java
 C:\Users\USUARIO\Desktop\proyectos\PortfolioBackend\src\main\java\com\Portfolio\portfolioBackend\modelo\Educacion.java

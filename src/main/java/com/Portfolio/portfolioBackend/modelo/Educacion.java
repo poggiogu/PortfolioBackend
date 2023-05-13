@@ -14,7 +14,7 @@ public class Educacion {
     //atributos
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_educacion;
+    private Long id;
     @Basic
     private String title;
     private String course;
@@ -27,8 +27,8 @@ public class Educacion {
     public Educacion() {
     }
 
-    public Educacion(Long id_educacion, String title, String course, String descripcion, String year, String instLogoUrl, String certificadoUrl) {
-        this.id_educacion = id_educacion;
+    public Educacion(Long id, String title, String course, String descripcion, String year, String instLogoUrl, String certificadoUrl) {
+        this.id = id;
         this.title = title;
         this.course = course;
         this.descripcion = descripcion;

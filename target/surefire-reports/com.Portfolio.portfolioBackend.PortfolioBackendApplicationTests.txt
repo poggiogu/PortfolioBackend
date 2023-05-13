@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.Portfolio.portfolioBackend.PortfolioBackendApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.556 s - in com.Portfolio.portfolioBackend.PortfolioBackendApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.29 s - in com.Portfolio.portfolioBackend.PortfolioBackendApplicationTests

@@ -12,6 +12,7 @@ import com.Portfolio.portfolioBackend.modelo.Perfil;
 import com.Portfolio.portfolioBackend.modelo.Proyecto;
 import com.Portfolio.portfolioBackend.modelo.Skill;
 import java.util.List;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,7 +55,7 @@ public class Controller {
     @PostMapping("/proyectos/crear")
     public ResponseEntity<?> crearProyecto(@RequestBody Proyecto proy){
         proServ.crearProyecto(proy);
-        return new ResponseEntity(new Mensaje("proyecto creado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("proyecto creado correctamente!"), HttpStatus.OK);
     }
     
     @GetMapping("/proyectos/{id}")
@@ -64,7 +65,7 @@ public class Controller {
         return new ResponseEntity(proyecto, HttpStatus.OK);
     }
     
-    @GetMapping("/proyectos/traerTodos")
+    @GetMapping("/proyectos/traertodos")
     @ResponseBody
     public ResponseEntity<List<Proyecto>> traerProyectos(){
         List lista = proServ.traerProyectos();
@@ -73,10 +74,10 @@ public class Controller {
     
     //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/proyectos/{id}")
-    public void editarProyecto(@PathVariable Long id,
+    public ResponseEntity<?>editarProyecto(@PathVariable Long id,
                                @RequestBody Proyecto proy){
         Proyecto proyecto = proServ.traerProyecto(id);
-        proyecto.setId_project(id);
+        proyecto.setId(id);
         proyecto.setNombre(proy.getNombre());
         proyecto.setDescripcion(proy.getDescripcion());
         proyecto.setFecha(proy.getFecha());
@@ -84,38 +85,46 @@ public class Controller {
         proyecto.setUrlRepositorio(proy.getUrlRepositorio());
         
         proServ.crearProyecto(proyecto);
+        
+        return new ResponseEntity(new Mensaje("proyecto editado correctamente!"), HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/proyectos/{id}")
-    public void borrarProyecto(@PathVariable Long id){
+    public ResponseEntity<?>borrarProyecto(@PathVariable Long id){
         proServ.borrarProyecto(id);
+        return new ResponseEntity(new Mensaje("proyecto eliminado correctamente!"), HttpStatus.OK);
     }
     
     //métodos Experiencias******************************************************
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/experiencias/crear")
-    public void crearExperiencia(@RequestBody Experiencia exp){
+    @PostMapping("/experiencia/crear")
+    
+    public ResponseEntity<?>crearExperiencia(@RequestBody Experiencia exp){
         expServ.crearExperiencia(exp);
+        return new ResponseEntity(new Mensaje("experiencia creada correctamente!"), HttpStatus.OK);
     }
     
-    @GetMapping("/experiecias/{id}")
+    @GetMapping("/experiecia/{id}")
     @ResponseBody
-    public Experiencia traerExperiencia(@PathVariable Long id){
-        return expServ.traerExperiencia(id);
+    public ResponseEntity<Experiencia> traerExperiencia(@PathVariable Long id){
+        Experiencia exp = expServ.traerExperiencia(id);
+        return new ResponseEntity(exp, HttpStatus.OK);
     }
     
-    @GetMapping("/experiencias/traertodos")
+    @GetMapping("/experiencia/traertodos")
     @ResponseBody
-    public List<Experiencia> traerExperiencias(){
-        return expServ.traerExperiencias();
+    public ResponseEntity<List<Experiencia>> traerExperiencias(){
+        List lista = expServ.traerExperiencias();
+        return new ResponseEntity(lista,HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/experiencias/{id}")
-    public void editarExperiencia(@PathVariable Long id,
+    @PutMapping("/experiencia/{id}")
+    
+    public ResponseEntity<?>editarExperiencia(@PathVariable Long id,
                                @RequestBody Experiencia exp){
-        Experiencia experiencia = traerExperiencia(id);
+        Experiencia experiencia = expServ.traerExperiencia(id);
         experiencia.setText(exp.getText());
         experiencia.setCargo(exp.getCargo());
         experiencia.setDescripcion(exp.getDescripcion());
@@ -123,27 +132,33 @@ public class Controller {
         experiencia.setBrandLogoUrl(exp.getBrandLogoUrl());
         
         expServ.crearExperiencia(experiencia);
+        
+        return new ResponseEntity(new Mensaje("experiencia editada correctamente!"), HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/experiencia/{id}")
-    public void borrarExperiencia(@PathVariable Long id){
-        expServ.borrarExperiencia(id);
-    }
     
+    public ResponseEntity<?> borrarExperiencia(@PathVariable Long id){
+        expServ.borrarExperiencia(id);
+        return new ResponseEntity(new Mensaje("experiencia eliminada correctamente!"), HttpStatus.OK);
+    }
     
     
     //Métodos de Educacion******************************************************
     //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/educacion/crear")
-    public void crearEducacion(@RequestBody Educacion edu){
+    
+    public ResponseEntity<?> crearEducacion(@RequestBody Educacion edu){
         eduServ.crearEducacion(edu);
+        return new ResponseEntity(new Mensaje("curso creado correctamente!"), HttpStatus.OK);
     }
     
     @GetMapping("/educacion/{id}")
     @ResponseBody
-    public Educacion traerEducacion(@PathVariable Long id){
-        return eduServ.traerEducacion(id);
+    public ResponseEntity<Educacion> traerEducacion(@PathVariable Long id){
+        Educacion curso = eduServ.traerEducacion(id);
+        return new ResponseEntity(curso, HttpStatus.OK);
     }
     
      
@@ -156,9 +171,9 @@ public class Controller {
     
     //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/educacion/{id}")
-    public void editarEducacion(@PathVariable Long id,
+    public ResponseEntity<?> editarEducacion(@PathVariable Long id,
                                @RequestBody Educacion edu){
-        Educacion educacion = traerEducacion(id);
+        Educacion educacion = eduServ.traerEducacion(id);
         educacion.setTitle(edu.getTitle());
         educacion.setCourse(edu.getCourse());
         educacion.setDescripcion(edu.getDescripcion());
@@ -167,12 +182,16 @@ public class Controller {
         educacion.setCertificadoUrl(edu.getCertificadoUrl());
         
         eduServ.crearEducacion(educacion);
+        
+        return new ResponseEntity(new Mensaje("curso editado correctamente!"), HttpStatus.OK);
+        
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/educacion/{id}")
-    public void borrarEducacion(@PathVariable Long id){
+    public ResponseEntity<?> borrarEducacion(@PathVariable Long id){
         eduServ.borrarEducacion(id);
+        return new ResponseEntity(new Mensaje("curso eliminado correctamente!"), HttpStatus.OK);
     }
     
     //Métodos de Perfil******************************************************
@@ -180,78 +199,92 @@ public class Controller {
     
    
     @PostMapping("/perfil/crear")
-    public void crearPerfil(@RequestBody Perfil perfil){
+    public ResponseEntity<?> crearPerfil(@RequestBody Perfil perfil){
         perfilServ.crearPerfil(perfil);
+        return new ResponseEntity(new Mensaje("perfil creado correctamente!"), HttpStatus.OK);
     }
     
     @GetMapping("/perfil/{id}")
     @ResponseBody
-    public Perfil traerPerfil(@PathVariable Long id){
-        return perfilServ.traerPerfil(id);
+    public ResponseEntity<Perfil> traerPerfil(@PathVariable Long id){
+        Perfil perf = perfilServ.traerPerfil(id);
+        return new ResponseEntity(perf, HttpStatus.OK);
     }
     
     @GetMapping("/perfil/traertodos")
     @ResponseBody
-    public List<Perfil> traerPerfiles(){
-        return perfilServ.traerPerfiles();
+    public ResponseEntity<List<Perfil>> traerPerfiles(){
+        List<Perfil> lista = perfilServ.traerPerfiles();
+        return new ResponseEntity(lista, HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/perfil/{id}")
-    public void editarPerfil(@PathVariable Long id,
+    public ResponseEntity<?> editarPerfil(@PathVariable Long id,
                                @RequestBody Perfil perfil){
-        Perfil perf = traerPerfil(id);
+        Perfil perf = perfilServ.traerPerfil(id);
         perf.setNombre(perfil.getNombre());
         perf.setTitulo(perfil.getTitulo());
         perf.setAcercaDeMi(perfil.getAcercaDeMi());
-        perf.setUrlImagenPerfil(perfil.getUrlImagenBanner());
+        perf.setUrlImagenPerfil(perfil.getUrlImagenPerfil());
         perf.setUrlImagenBanner(perfil.getUrlImagenBanner());
         
         perfilServ.crearPerfil(perf);
+        
+        return new ResponseEntity(new Mensaje("perfil editado correctamente!"), HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/perfil/{id}")
-    public void borrarPerfil(@PathVariable Long id){
+    public ResponseEntity<?> borrarPerfil(@PathVariable Long id){
         perfilServ.borrarPerfil(id);
+        
+        return new ResponseEntity(new Mensaje("perfil eliminado correctamente!"), HttpStatus.OK);
     }
+    
     
     //Métodos de Skills******************************************************
     //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/skill/crear")
-    public void crearSkill(@RequestBody Skill skill){
+    public ResponseEntity<?>crearSkill(@RequestBody Skill skill){
         skillServ.crearSkill(skill);
+        return new ResponseEntity(new Mensaje("skill creada correctamente!"), HttpStatus.OK);
     }
     
     @GetMapping("/skill/{id}")
     @ResponseBody
-    public Skill traerSkill(@PathVariable Long id){
-        return skillServ.traerSkill(id);
+    public ResponseEntity<Skill> traerSkill(@PathVariable Long id){
+        Skill ski = skillServ.traerSkill(id);
+        return new ResponseEntity(ski, HttpStatus.OK);
     }
     
     @GetMapping("/skill/traertodos")
     @ResponseBody
-    public List<Skill> traerSkills(){
-        return skillServ.traerSkills();
+    public ResponseEntity<List<Skill>> traerSkills(){
+        List<Skill> lista = skillServ.traerSkills();
+        return new ResponseEntity(lista, HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/skill/{id}")
-    public void editarSkill(@PathVariable Long id,
+    public ResponseEntity<?> editarSkill(@PathVariable Long id,
                                @RequestBody Skill skill){
-        Skill ski = traerSkill(id);
+        Skill ski = skillServ.traerSkill(id);
         ski.setTitulo(skill.getTitulo());
         ski.setColor(skill.getColor());
         ski.setPorcentaje(skill.getPorcentaje());
         ski.setImagen(skill.getImagen());
         
         skillServ.crearSkill(ski);
+        
+        return new ResponseEntity(new Mensaje("skill editada correctamente!"), HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/skill/{id}")
-    public void borrarSkill(@PathVariable Long id){
+    public ResponseEntity<?> borrarSkill(@PathVariable Long id){
         skillServ.borrarSkill(id);
+        return new ResponseEntity(new Mensaje("skill eliminada correctamente!"), HttpStatus.OK);
     }
     
     //************************************************************************

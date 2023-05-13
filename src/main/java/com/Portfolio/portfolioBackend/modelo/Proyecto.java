@@ -14,7 +14,7 @@ public class Proyecto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_project;
+    private Long id;
     @Basic
     private String nombre;
     private String descripcion;
@@ -25,8 +25,8 @@ public class Proyecto {
     public Proyecto() {
     }
 
-    public Proyecto(Long id_project, String nombre, String descripcion, String fecha, String urlImagen, String urlRepositorio) {
-        this.id_project = id_project;
+    public Proyecto(Long id, String nombre, String descripcion, String fecha, String urlImagen, String urlRepositorio) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fecha = fecha;
