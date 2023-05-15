@@ -12,12 +12,9 @@ import com.Portfolio.portfolioBackend.modelo.Perfil;
 import com.Portfolio.portfolioBackend.modelo.Proyecto;
 import com.Portfolio.portfolioBackend.modelo.Skill;
 import java.util.List;
-import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,7 +28,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/portfolio")
-@CrossOrigin(origins = "http://localhost:4200")
 public class Controller {
     
     //Conexiones*****************************************
@@ -51,7 +47,7 @@ public class Controller {
     PerfilService perfilServ;
     
     //métodos de proyectos****************************************************
-    //@PreAuthorize("hasRole('ADMIN')")
+   
     @PostMapping("/proyectos/crear")
     public ResponseEntity<?> crearProyecto(@RequestBody Proyecto proy){
         proServ.crearProyecto(proy);
@@ -72,7 +68,7 @@ public class Controller {
         return new ResponseEntity(lista, HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+  
     @PutMapping("/proyectos/{id}")
     public ResponseEntity<?>editarProyecto(@PathVariable Long id,
                                @RequestBody Proyecto proy){
@@ -89,7 +85,7 @@ public class Controller {
         return new ResponseEntity(new Mensaje("proyecto editado correctamente!"), HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+   
     @DeleteMapping("/proyectos/{id}")
     public ResponseEntity<?>borrarProyecto(@PathVariable Long id){
         proServ.borrarProyecto(id);
@@ -97,7 +93,7 @@ public class Controller {
     }
     
     //métodos Experiencias******************************************************
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/experiencia/crear")
     
     public ResponseEntity<?>crearExperiencia(@RequestBody Experiencia exp){
@@ -119,7 +115,7 @@ public class Controller {
         return new ResponseEntity(lista,HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/experiencia/{id}")
     
     public ResponseEntity<?>editarExperiencia(@PathVariable Long id,
@@ -136,7 +132,7 @@ public class Controller {
         return new ResponseEntity(new Mensaje("experiencia editada correctamente!"), HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+  
     @DeleteMapping("/experiencia/{id}")
     
     public ResponseEntity<?> borrarExperiencia(@PathVariable Long id){
@@ -146,7 +142,7 @@ public class Controller {
     
     
     //Métodos de Educacion******************************************************
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/educacion/crear")
     
     public ResponseEntity<?> crearEducacion(@RequestBody Educacion edu){
@@ -169,7 +165,7 @@ public class Controller {
         return new ResponseEntity(lista, HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/educacion/{id}")
     public ResponseEntity<?> editarEducacion(@PathVariable Long id,
                                @RequestBody Educacion edu){
@@ -187,7 +183,7 @@ public class Controller {
         
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @DeleteMapping("/educacion/{id}")
     public ResponseEntity<?> borrarEducacion(@PathVariable Long id){
         eduServ.borrarEducacion(id);
@@ -195,7 +191,7 @@ public class Controller {
     }
     
     //Métodos de Perfil******************************************************
-    //@PreAuthorize("hasRole('ADMIN')")
+ 
     
    
     @PostMapping("/perfil/crear")
@@ -218,7 +214,7 @@ public class Controller {
         return new ResponseEntity(lista, HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+    
     @PutMapping("/perfil/{id}")
     public ResponseEntity<?> editarPerfil(@PathVariable Long id,
                                @RequestBody Perfil perfil){
@@ -234,7 +230,7 @@ public class Controller {
         return new ResponseEntity(new Mensaje("perfil editado correctamente!"), HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+    
     @DeleteMapping("/perfil/{id}")
     public ResponseEntity<?> borrarPerfil(@PathVariable Long id){
         perfilServ.borrarPerfil(id);
@@ -244,7 +240,7 @@ public class Controller {
     
     
     //Métodos de Skills******************************************************
-    //@PreAuthorize("hasRole('ADMIN')")
+   
     @PostMapping("/skill/crear")
     public ResponseEntity<?>crearSkill(@RequestBody Skill skill){
         skillServ.crearSkill(skill);
@@ -265,7 +261,7 @@ public class Controller {
         return new ResponseEntity(lista, HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+   
     @PutMapping("/skill/{id}")
     public ResponseEntity<?> editarSkill(@PathVariable Long id,
                                @RequestBody Skill skill){
@@ -280,7 +276,7 @@ public class Controller {
         return new ResponseEntity(new Mensaje("skill editada correctamente!"), HttpStatus.OK);
     }
     
-    //@PreAuthorize("hasRole('ADMIN')")
+  
     @DeleteMapping("/skill/{id}")
     public ResponseEntity<?> borrarSkill(@PathVariable Long id){
         skillServ.borrarSkill(id);
