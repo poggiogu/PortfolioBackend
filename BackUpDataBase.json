@@ -1,0 +1,170 @@
+[
+{
+    "type": "header",
+    "version": "4.8.4",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+},
+{
+    "type": "database",
+    "name": "bm4epabf2mrj0t6yqjl1"
+},
+{
+    "type": "table",
+    "name": "educacion",
+    "database": "bm4epabf2mrj0t6yqjl1",
+    "data": 
+[
+{
+    "id": "1",
+    "certificado_url": "https:\/\/i.ibb.co\/n6WjM0V\/certificado-se-programar.png",
+    "course": "Se_Programar",
+    "descripcion": "introducción a la programación",
+    "inst_logo_url": "https:\/\/i.ibb.co\/Ssp4pd3\/logo-argentina-programa.png",
+    "title": "Argentina Programa",
+    "year": "2022"
+},
+{
+    "id": "2",
+    "certificado_url": "https:\/\/i.ibb.co\/Lk92Kq2\/certificado-Ingles.png",
+    "course": "B1.2 MECR",
+    "descripcion": "curso de ingles técnico para programadores",
+    "inst_logo_url": "https:\/\/i.ibb.co\/9vBY9GK\/unnamed.jpg",
+    "title": "CUI (centro universitario de idiomas)",
+    "year": "2022"
+}
+]
+
+}
+,{
+    "type": "table",
+    "name": "experiencia",
+    "database": "bm4epabf2mrj0t6yqjl1",
+    "data": 
+[
+{
+    "id": "1",
+    "brand_logo_url": "https:\/\/i.ibb.co\/zhcTF2k\/I6ff-Wyrd-400x400.jpg",
+    "cargo": "rep. Customer Service",
+    "dates": "Marzo 2008 - Julio 2011",
+    "descripcion": "atencion a clientes residentes en EEUU",
+    "text": "Capital One Credit Card"
+},
+{
+    "id": "2",
+    "brand_logo_url": "https:\/\/i.ibb.co\/w4dYpj3\/1644517160023.jpg",
+    "cargo": "operador gammagrafia",
+    "dates": "Septiembre 2022 a diciembre 2022",
+    "descripcion": "tareas de radiografia industrial en central nuclear embalse",
+    "text": "Henisa"
+},
+{
+    "id": "3",
+    "brand_logo_url": "https:\/\/i.ibb.co\/RCz49pN\/logo-masoero.png",
+    "cargo": "operador gammagrafia",
+    "dates": "Marzo 2021 a Mayo 2021",
+    "descripcion": "tareas de radiografia industrial en central nuclear embalse",
+    "text": "Masoero y Asociados"
+}
+]
+
+}
+,{
+    "type": "table",
+    "name": "perfil",
+    "database": "bm4epabf2mrj0t6yqjl1",
+    "data": 
+[
+{
+    "id": "1",
+    "acerca_de_mi": "...Soy un apasionado de la tecnología, tengo excelente manejo del portugués y el inglés, pero principalmente me encantan los nuevos desafíos y seguir aprendiendo constantemente...",
+    "nombre": "Guillermo Poggioni",
+    "titulo": "Full Stack Developer Jr.",
+    "url_imagen_banner": "https:\/\/i.gifer.com\/origin\/2b\/2bd6409223f135eefa87607dab8d12ef.gif",
+    "url_imagen_perfil": "https:\/\/i.ibb.co\/hDJ9jGS\/foto-guille.jpg"
+}
+]
+
+}
+,{
+    "type": "table",
+    "name": "proyecto",
+    "database": "bm4epabf2mrj0t6yqjl1",
+    "data": 
+[
+{
+    "id": "1",
+    "descripcion": "portfolio personal editable",
+    "fecha": "mayo 2023",
+    "nombre": "Mi Portfolio",
+    "url_imagen": "https:\/\/i.ibb.co\/XSw2KJ9\/captura-portfolio.png",
+    "url_repositorio": "https:\/\/github.com\/poggiogu\/PortFolioAngular.git"
+}
+]
+
+}
+,{
+    "type": "table",
+    "name": "skill",
+    "database": "bm4epabf2mrj0t6yqjl1",
+    "data": 
+[
+{
+    "id": "2",
+    "color": "Yellow",
+    "imagen": "https:\/\/i.ibb.co\/c3zxzZJ\/javascript-39397.png",
+    "porcentaje": "65",
+    "titulo": "Javascript"
+},
+{
+    "id": "52",
+    "color": "rgb(132, 31, 169)",
+    "imagen": "https:\/\/i.ibb.co\/gFhs2r5\/Bootstrap-logo-svg.png",
+    "porcentaje": "75",
+    "titulo": "Bootstrap"
+},
+{
+    "id": "53",
+    "color": "red",
+    "imagen": "https:\/\/i.ibb.co\/V3nL68h\/angular-icon-logo-1.png",
+    "porcentaje": "60",
+    "titulo": "Angular"
+},
+{
+    "id": "54",
+    "color": "green",
+    "imagen": "https:\/\/i.ibb.co\/st9NNYP\/spring-boot.png",
+    "porcentaje": "65",
+    "titulo": "Spring Boot"
+},
+{
+    "id": "55",
+    "color": "blue",
+    "imagen": "https:\/\/i.ibb.co\/rZJ1vM9\/logo-mysql-26353.png",
+    "porcentaje": "65",
+    "titulo": "MySQL"
+},
+{
+    "id": "56",
+    "color": "red",
+    "imagen": "https:\/\/i.ibb.co\/jbqwpHy\/pngwing-com.png",
+    "porcentaje": "65",
+    "titulo": "Java"
+},
+{
+    "id": "57",
+    "color": "blue",
+    "imagen": "https:\/\/i.ibb.co\/LtddjBH\/Png-Item-1985012.png",
+    "porcentaje": "75",
+    "titulo": "CSS"
+},
+{
+    "id": "58",
+    "color": "orange",
+    "imagen": "https:\/\/i.ibb.co\/KwmHqP1\/file-type-html-icon-130541.png",
+    "porcentaje": "75",
+    "titulo": "HTML5"
+}
+]
+
+}
+]
